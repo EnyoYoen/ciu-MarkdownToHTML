@@ -27,7 +27,7 @@ def convert():
     
     html = "<link rel=\"stylesheet\" href=\"splendor/css/splendor.css\">" + html
 
-    with codecs.open(coding-interview-university/README.html", "w", encoding='utf-8') as htmlf:
+    with codecs.open("coding-interview-university/README.html", "w", encoding='utf-8') as htmlf:
         htmlf.write(html)
 
 retrieveRepo()
