@@ -21,18 +21,14 @@ def retrieveRepo():
     system(copy)
 
 def convert():
-    dirpath = path.dirname(__file__)
     with codecs.open("coding-interview-university/README.md", "r", encoding='utf-8') as mdf:
         text = mdf.read()
         html = markdown.markdown(text)
     
     html = "<link rel=\"stylesheet\" href=\"splendor/css/splendor.css\">" + html
 
-    with codecs.open(dirpath + "/coding-interview-university/README.html", "w", encoding='utf-8') as htmlf:
+    with codecs.open(coding-interview-university/README.html", "w", encoding='utf-8') as htmlf:
         htmlf.write(html)
 
-def ciu():
-    retrieveRepo()
-    convert()
-
-ciu()
+retrieveRepo()
+convert()
