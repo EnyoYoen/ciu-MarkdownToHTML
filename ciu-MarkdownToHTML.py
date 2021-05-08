@@ -6,13 +6,16 @@ import codecs
 
 def retrieveRepo():
     if name == "posix":
-        copy = "cp -r splendor-master coding-interview-university"
+        copy = "cp -r splendor coding-interview-university"
+        rmdir = "rm -r"
         gitpath = "git"
     elif name == "nt":
-        copy = "xcopy splendor-master coding-interview-university\splendor-master /E /i /q"
+        copy = "xcopy splendor coding-interview-university\splendor /E /i /q"
+        rmdir = "rmdir /S /Q"
         gitpath = "\"C:\Program Files\Git\cmd\git\""
 
     dirpath = path.dirname(__file__)
+    system(rmdir + " coding-interview-university")
     system("cd " + dirpath)
     system(gitpath + " clone https://github.com/jwasham/coding-interview-university.git")
     system(copy)
@@ -23,7 +26,7 @@ def convert():
         text = mdf.read()
         html = markdown.markdown(text)
     
-    html = "<link rel=\"stylesheet\" href=\"splendor-master/css/splendor.css\">" + html
+    html = "<link rel=\"stylesheet\" href=\"splendor/css/splendor.css\">" + html
 
     with codecs.open(dirpath + "/coding-interview-university/README.html", "w", encoding='utf-8') as htmlf:
         htmlf.write(html)
