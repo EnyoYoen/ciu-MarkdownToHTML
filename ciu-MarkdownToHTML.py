@@ -7,17 +7,17 @@ import codecs
 def retrieveRepo():
     if name == "posix":
         copy = "cp -r splendor coding-interview-university"
-        rmdir = "rm -r"
-        gitpath = "git"
+        rmdir = "rm -r coding-interview-university"
+        git = "git clone https://github.com/jwasham/coding-interview-university.git"
     elif name == "nt":
         copy = "xcopy splendor coding-interview-university\splendor /E /i /q"
-        rmdir = "rmdir /S /Q"
-        gitpath = "\"C:\Program Files\Git\cmd\git\""
+        rmdir = "rmdir /S /Q coding-interview-university"
+        git = "\"C:\Program Files\Git\cmd\git\" clone https://github.com/jwasham/coding-interview-university.git"
 
     dirpath = path.dirname(__file__)
-    system(rmdir + " coding-interview-university")
+    system(rmdir)
     system("cd " + dirpath)
-    system(gitpath + " clone https://github.com/jwasham/coding-interview-university.git")
+    system(git)
     system(copy)
 
 def convert():
