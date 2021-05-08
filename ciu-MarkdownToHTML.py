@@ -7,7 +7,7 @@ import codecs
 def retrieveRepo():
     if name == "posix":
         copy = "cp -r splendor coding-interview-university"
-        rmdir = "rm -rf coding-interview-university"
+        rmdir = "rm -r -f coding-interview-university"
         git = "git clone https://github.com/jwasham/coding-interview-university.git"
     elif name == "nt":
         copy = "xcopy splendor coding-interview-university\splendor /E /i /q"
