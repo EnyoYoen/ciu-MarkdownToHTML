@@ -12,7 +12,7 @@ def retrieveRepo():
     elif name == "nt":
         copy = "xcopy splendor coding-interview-university\splendor /E /i /q"
         rmdir = "rmdir /S /Q coding-interview-university"
-        git = "\"C:\Program Files\Git\cmd\git\" clone https://github.com/jwasham/coding-interview-university.git"
+        git = "git clone https://github.com/jwasham/coding-interview-university.git"
 
     dirpath = path.dirname(__file__)
     system(rmdir)
